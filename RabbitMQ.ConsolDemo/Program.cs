@@ -14,7 +14,7 @@ namespace RabbitMQ.ConsolDemo
             Port = 5672   //默认值：5672
         };
         const string ExchangeName = "hello.exchange";
-        //const string QueueName = "hello.queue";
+        const string QueueName = "hello.queue";
         const string RoutingKey = "hello";
         static void Main(string[] args)
         {
@@ -26,6 +26,10 @@ namespace RabbitMQ.ConsolDemo
             //3.声明交换器
             channel.ExchangeDeclare(exchange: ExchangeName, type: "direct", durable: true, autoDelete: false, arguments: null);
 
+            // 4.申明队列
+            channel.QueueDeclare(queue: QueueName, durable: true, exclusive: false, autoDelete: false, arguments: null);
+            // 5.通过键“hello”将队列和交换器绑定起来
+            channel.QueueBind(queue: QueueName, exchange: ExchangeName, routingKey: RoutingKey);
             var str = string.Empty;
             while (string.IsNullOrEmpty(str))
             {

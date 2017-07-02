@@ -41,7 +41,7 @@ namespace RabbitMQ.ConsolDemo.Consume
             switch (type)
             {
                 case "1":
-                    
+                    //var aaa=new QueueingBasicConsumer(channel);
                     var consumer = new EventingBasicConsumer(channel);
                     consumer.Received += (ch, ea) =>
                     {

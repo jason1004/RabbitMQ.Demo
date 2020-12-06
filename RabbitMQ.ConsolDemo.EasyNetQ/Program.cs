@@ -12,13 +12,13 @@ namespace RabbitMQ.ConsolDemo.EasyNetQ
     {
         static void Main(string[] args)
         {
-            //https://github.com/EasyNetQ/EasyNetQ
+            //c
             //http://mikehadlow.blogspot.sg/2014/02/easynetq-layered-api.html
 
-            var bus = RabbitHutch.CreateBus("host=www.c-code.xin:5672;" +
-                                            "virtualHost=/;" +
-                                            "username=test;" +
-                                            "password=pwd@rabbit.com");
+            var bus = RabbitHutch.CreateBus("host=localhost:5672;" +
+                                            "virtualHost=my_vhost;" +
+                                            "username=admin;" +
+                                            "password=admin");
 
             var msg = "";
             while (string.IsNullOrEmpty(msg))

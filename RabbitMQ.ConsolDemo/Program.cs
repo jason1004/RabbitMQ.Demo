@@ -7,10 +7,10 @@ namespace RabbitMQ.ConsolDemo
     {
         private static readonly ConnectionFactory RabbitMqFactory = new ConnectionFactory
         {
-            HostName = "www.c-code.xin",
-            UserName = "test",
-            Password = "pwd@rabbit.com",
-            VirtualHost = "/", //默认值： /
+            HostName = "localhost",
+            UserName = "admin",
+            Password = "admin",
+            VirtualHost = "my_vhost", //默认值： /
             Port = 5672   //默认值：5672
         };
         const string ExchangeName = "hello.exchange";

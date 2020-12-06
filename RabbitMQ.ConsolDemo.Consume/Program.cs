@@ -8,10 +8,10 @@ namespace RabbitMQ.ConsolDemo.Consume
     {
         private static readonly ConnectionFactory RabbitMqFactory = new ConnectionFactory
         {
-            HostName = "www.c-code.xin",
-            UserName = "test",
-            Password = "pwd@rabbit.com",
-            VirtualHost = "/"
+            HostName = "localhost",
+            UserName = "admin",
+            Password = "admin",
+            VirtualHost = "my_vhost"
         };
         const string ExchangeName = "hello.exchange";
         const string QueueName = "hello.queue";
